@@ -13,7 +13,7 @@ import { store } from "./storage/redux/store";
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
-Axios.defaults.baseURL = "http://localhost:3000";
+Axios.defaults.baseURL = "https://apploeebackend.onrender.com";
 root.render(
     <React.StrictMode>
         <Provider store={store}>
