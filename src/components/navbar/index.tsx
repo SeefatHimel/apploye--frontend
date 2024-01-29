@@ -12,7 +12,14 @@ const Navbar = () => {
     const navigate = useNavigate();
     const path = useLocation().pathname;
 
-    if (path.includes("login")) return <></>;
+    if (path.includes("login"))
+        return (
+            <div className="w-full flex justify-between px-8 py-2 bg-gray-200">
+                <div className="cursor-pointer" onClick={() => navigate("/")}>
+                    Home
+                </div>
+            </div>
+        );
     return (
         <div className="w-full flex justify-between px-8 py-2 bg-gray-200">
             <div className="cursor-pointer" onClick={() => navigate("/")}>
@@ -25,7 +32,7 @@ const Navbar = () => {
                 >
                     Products
                 </div>
-                {user?.role === "ADMIN" && (
+                {user?.role === "ADMIN" ? (
                     <Button
                         onClick={() => {
                             localStorage.clear();
@@ -35,6 +42,14 @@ const Navbar = () => {
                         }}
                     >
                         Logout
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={() => {
+                            navigate("/login");
+                        }}
+                    >
+                        Login
                     </Button>
                 )}
             </div>
