@@ -43,7 +43,7 @@ const ProductsPage = () => {
                 <div className="text-xl font-bold">Products</div>
                 {user.role === "ADMIN" && (
                     <div
-                        className="p-2 bg-blue-400 w-max rounded font-semibold cursor-pointer"
+                        className="p-2 bg-black text-white w-max rounded font-semibold cursor-pointer"
                         onClick={() => setIsModalOpen(true)}
                     >
                         Add Product
