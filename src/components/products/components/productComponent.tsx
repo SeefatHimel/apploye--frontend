@@ -39,10 +39,16 @@ const SingleProduct = ({
             <div>{product?.rating}</div>
             {mode === "ADMIN" && (
                 <div className="flex gap-1 invisible group-hover:visible absolute top-2 right-2 cursor-pointer">
-                    <div onClick={() => setIsModalOpen(true)}>
+                    <div
+                        className="bg-gray-200 rounded"
+                        onClick={() => setIsModalOpen(true)}
+                    >
                         <AiFillEdit size={20} />
                     </div>
-                    <div onClick={deleteSingleProduct}>
+                    <div
+                        className="bg-gray-200 rounded"
+                        onClick={deleteSingleProduct}
+                    >
                         <MdDeleteForever size={20} />
                     </div>
                 </div>
