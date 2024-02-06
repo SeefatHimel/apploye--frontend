@@ -13,14 +13,15 @@ import { store } from "./storage/redux/store";
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
-Axios.defaults.baseURL = "https://apploeebackend.onrender.com";
+// Axios.defaults.baseURL = "https://apploeebackend.onrender.com";
+Axios.defaults.baseURL = "http://127.0.0.1:8000/";
 root.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
                 <Layout>
                     <Routes>
-                        <Route path="/" element={<App />} />
+                        <Route path="/" element={<App />} />zpost
                         <Route path="/products" element={<ProductsPage />} />
                         <Route path="/login" element={<LoginPage />} />
                     </Routes>

@@ -3,7 +3,7 @@ import { CreateProductDto, LoginDto } from "../models";
 
 export const getProducts = async () => {
     try {
-        const res = await axios.get("/products");
+        const res = await axios.get("/product_management/products");
         console.log("🚀 ~ getProducts ~ res:", res);
         return res.data;
     } catch (error) {
@@ -14,7 +14,7 @@ export const getProducts = async () => {
 
 export const createProduct = async (data: CreateProductDto) => {
     try {
-        const res = await axios.post("/products/create", data);
+        const res = await axios.post("/product_management/products", data);
         console.log("🚀 ~ getProducts ~ res:", res);
         return res.data;
     } catch (error) {
@@ -25,7 +25,7 @@ export const createProduct = async (data: CreateProductDto) => {
 
 export const deleteProduct = async (id: number) => {
     try {
-        const res = await axios.delete(`/products/delete/${id}`);
+        const res = await axios.delete(`/product_management/products/${id}`);
         console.log("🚀 ~ deleteProduct ~ res:", res);
         return res.data;
     } catch (error) {
@@ -36,7 +36,10 @@ export const deleteProduct = async (id: number) => {
 
 export const updateProduct = async (id: number, data: CreateProductDto) => {
     try {
-        const res = await axios.patch(`/products/update/${id}`, data);
+        const res = await axios.patch(
+            `/product_management/products/${id}`,
+            data
+        );
         console.log("🚀 ~ deleteProduct ~ res:", res);
         return res.data;
     } catch (error) {
